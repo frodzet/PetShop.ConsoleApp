@@ -11,7 +11,7 @@ namespace PetShop.Core.Entities
         public string Type { get; set; }
         public string Color { get; set; }
         public DateTime Birthdate { get; set; }
-        public string PreviousOwner { get; set; }
+        public Owner PreviousOwner { get; set; }
         public DateTime SoldDate { get; set; }
         public double Price { get; set; }
     }

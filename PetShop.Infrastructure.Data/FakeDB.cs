@@ -24,7 +24,7 @@ namespace PetShop.Infrastructure.Data
                 pet.Type = GenerateType();
                 pet.Color = GenerateColor();
                 pet.Birthdate = GenerateDate(new DateTime(1990, 1, 1));
-                pet.PreviousOwner = GenerateName(12);
+                //pet.PreviousOwner = GenerateName(12);
                 pet.SoldDate = GenerateDate(pet.Birthdate);
 
                 pet.Price = GeneratePrice(pet.Type);
@@ -33,7 +33,7 @@ namespace PetShop.Infrastructure.Data
             }
         }
 
-        private static string GenerateName(int maxLength)
+        public static string GenerateName(int maxLength)
         {
             string[] consonants = {"b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "l", "n", "p", "q", "r", "s", "t", "v", "w", "x"};
             string[] vowels = {"a", "e", "i", "o", "u", "y"};
@@ -53,7 +53,7 @@ namespace PetShop.Infrastructure.Data
             return name;
         }
 
-        private static string GenerateType()
+        public static string GenerateType()
         {
             string[] petType = { "Dog", "Cat", "Whale", "Fish", "Snake", "Bear", "Rabbit", "Bird", "Goat", "Pig" };
 
@@ -62,7 +62,7 @@ namespace PetShop.Infrastructure.Data
             return petType[len];
         }
 
-        private static string GenerateColor()
+        public static string GenerateColor()
         {
             string[] petColor = { "Black", "Brown", "Red", "White with Black stribes", "Pink", "Purple", "Blue", "Yellow" };
 
@@ -71,7 +71,7 @@ namespace PetShop.Infrastructure.Data
             return petColor[len];
         }
 
-        private static double GeneratePrice(string petType)
+        public static double GeneratePrice(string petType)
         {
             int minPrice = 0;
             int maxPrice = 0;
@@ -126,7 +126,7 @@ namespace PetShop.Infrastructure.Data
 
         }
 
-        private static DateTime GenerateDate(DateTime fromDate)
+        public static DateTime GenerateDate(DateTime fromDate)
         {
             DateTime start = fromDate;
             int range = (DateTime.Today - start).Days;

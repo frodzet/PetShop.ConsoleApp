@@ -18,11 +18,11 @@ namespace PetShop.ConsoleApp
             serviceCollection.AddScoped<IPetService, PetService>();
 
             var serviceProvider = serviceCollection.BuildServiceProvider();
-            var carService = serviceProvider.GetRequiredService<IPetService>();
+            var petService = serviceProvider.GetRequiredService<IPetService>();
             while (true)
             {
                 Console.Clear();
-                new Printer(carService);
+                new Printer(petService);
                 Console.WriteLine("\nHit enter to return to the main menu.", Console.ForegroundColor = ConsoleColor.DarkRed);
                 Console.ReadLine();
             }
